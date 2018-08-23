@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSE 7343 Project - Ranger Chen</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- js library -->
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.edittable.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="js/Utils.js"></script>
+    <script type="text/javascript" src="js/PCB.js"></script>
+    <script type="text/javascript" src="js/Queue.js"></script>
+    <script type="text/javascript" src="js/Scheduler.js"></script>
+    <script type="text/javascript" src="js/Part1.js"></script>
+    <script type="text/javascript" src="js/Part2.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>CSE 7343 Project</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#part-1" class="ui-btn-active">Part 1 - PCB Queue</a></li>
+                        <li><a href="#part-2">Part 2 - CPU Scheduling</a></li>
+                    </ul>
+                </div>
+                <div id="part-1">
+                    <div id="queue-result">
+                        <label>Queue Status:</label>
+                        <div id="pcb-queue"></div>
+                    </div>
+                    <form>
+                        <fieldset id="queue-action" data-role="controlgroup">
+                            <legend>Action:</legend>
+                            <input type="radio" name="radio-action" id="radio-choice-add" value="add" checked="checked">
+                            <label for="radio-choice-add">Add</label>
+                            <input type="radio" name="radio-action" id="radio-choice-delete" value="delete">
+                            <label for="radio-choice-delete">Delete</label>
+                        </fieldset>
+                    </form>
+                    <div id="add-pid">
+                        <label for="add-pid-input">Process ID:</label>
+                        <input type="number" name="add-pid-input" id="add-pid-input" value="">
+                    </div>
+                    <div id="add-idx">
+                        <label for="add-idx-input">Index:</label>
+                        <input type="number" name="add-idx-input" id="add-idx-input" value="">
+                    </div>
+                    <button class="ui-btn ui-shadow" id="queue-add">Add</button>
+                    <button class="ui-btn ui-shadow" id="queue-delete" style="display: none;">Delete</button>
+                </div>
+                <div id="part-2">
+                    <form>
+                        <fieldset id="algorithm" data-role="controlgroup">
+                            <legend>Algorithm:</legend>
+                        </fieldset>
+                    </form>
+                    <div id="quantum">
+                        <label for="quantum">Quantum:</label>
+                        <input type="number" name="quantum" id="quantum-input" value="2">
+                    </div>
+                    <label for="textarea-a">Text Input:</label>
+                    <textarea name="textarea" id="pcb_input"></textarea>
+                    <button class="ui-btn ui-shadow" id="parse_input">Parse Text Input</button>
+                    <div id="edit-table-block">
+                        <label>Editable Table:</label>
+                        <div id="edit_table"></div>
+                        <button class="ui-btn ui-shadow" id="schedule">Schedule</button>
+                    </div>
+                    <div id="result" style="display:none;">
+                        <label>Gantt Chart:</label>
+                        <div id="gantt-chart">
+                            <div class="block"></div>
+                            <div class="scale"></div>
+                        </div>
+                        <label>Result Table:</label>
+                        <div id="result_table"></div>
+                        <div id="avg-time"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
