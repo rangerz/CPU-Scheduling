@@ -5,7 +5,7 @@ For CSE7343 Final Project (JavaScript-base)
 
 ### Part 1: Utils for Process Control Block (PCB) Queue
 * Add PCB by process Id (and position, default position is tail)
-* Delete PCB by process Id or position
+* Delete PCB by process Id or position (default position is head)
 
 ### Part 2: Implement multiple schedules
 * Support FCFS, Priority, Round-Robin, and SJF Scheduling (Preemptive and Non-preemptive)
